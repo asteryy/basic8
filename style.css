@@ -1,0 +1,72 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0;}
+
+.전체{background-color: dodgerblue;
+      padding: 20px;
+      width: 800px; margin: auto;
+      margin-top: 30px;
+    }
+
+.전체 .첫째{background-color: mediumpurple;
+           padding: 20px;
+        }
+
+.전체 .첫째 .첫손{float: left; width: 50%; height: 200px;}
+
+.전체 .첫째 .첫손.첫자식1{background-color: darkturquoise;
+                        position: relative;
+                        }
+.전체 .첫째 .첫손.첫자식1 .연예인{position: absolute;  /* 호적을 파고 나가서 부모가 인식을 못함 */
+                                left: 50%; top: 50%;
+                                transform: translate(-50%,-50%);
+                                /* 백분율의 기준은 자신이다
+                                내몸의 반만큼 앞으로, 반만큼 위로 가라
+                                중앙에 위치시킬 때 사용!!! */
+                                width: 200px;}
+.전체 .첫째 .첫손.첫자식1 .연예인 img{width: 100%; display: block;}
+
+
+.전체 .첫째 .첫손.첫자식2{background-color: goldenrod;
+                        position: relative; /* 밑에 있는 .크기의 absolute의 기준이 되기 위해 relative를 붙인 것임*/
+                        overflow: hidden;}
+.전체 .첫째 .첫손.첫자식2 .크기{position: absolute; left: 0; top: 0;
+                              width: 100%; height: 100%; overflow: hidden;
+                              transition: 0.3s;}
+
+.전체 .첫째 .첫손.첫자식2:hover .크기{transform: scale(1.2) rotate(360deg);}  
+                                             /* 120% */  /* 360도 회전 */
+
+.전체 .첫째 .첫손.첫자식2 .크기 img{width: 100%;}
+
+
+.전체 .첫째 .첫막내{clear: both;}  /* 첫막내는 부모가 깨지는 것을 막기 위해 만들어진 것 */
+
+
+.전체 .둘째{font-size: 50px;
+           background-color: #000;;
+           height: 500px;
+           position: relative;}
+
+.전체 .둘째 .video{width: 500px;
+                  position: absolute; 
+                  left: 50%; top: 50%;
+                  transform: translate(-50%,-50%);
+                 }
+                  
+.전체 .둘째 .video video{width: 100%;}
+                       /* 넓이를 부모에 맞춘다는 뜻 */
+.전체 .둘째 .캐릭터{width: 200px;
+                   position: absolute; right:7%; top: 15%;
+                   transform: rotate(30deg);}
+.전체 .둘째 .캐릭터 svg{}
+
+.전체 .셋째{height: 400px; position: relative;}
+.전체 .셋째 .일러{width: 300px;
+                 position: absolute; left: 50%; top: 50%; 
+                    /* absolute 때문에 붕 떠있으므로 높이값 지정 필수 */
+                 transform: translate(-50%,-50%) scale(0.1);
+                 opacity: 0;
+                 transition: 0.3s;}
+.전체 .셋째:hover .일러{opacity: 1;
+                       transform: translate(-50%,-50%) scale(1);}
+.전체 .셋째 .일러 svg{}
